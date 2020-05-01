@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'connected-react-router'
 import { ReactReduxFirebaseProvider } from 'react-redux-firebase'
+import { createFirestoreInstance } from 'redux-firestore';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 
 import store from './store'
@@ -30,8 +31,12 @@ const theme = createMuiTheme({
 function App() {
   const rrfProps = {
     firebase,
-    config: {},
+    config: {
+      userProfile: 'users',
+      useFirestoreForProfile: true
+    },
     dispatch: store.dispatch,
+    createFirestoreInstance
   }
 
   return (    

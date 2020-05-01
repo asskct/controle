@@ -1,14 +1,14 @@
 import React from 'react'
 
+import Banner from '../common/banner'
 import PageBase from '../common/pageBase'
 import { useStyles } from '../common/useStyles'
-import Banner from '../common/banner'
 
-function Pelada() {
+function Admin() {
     const classes = useStyles()
 
     return (
-        <PageBase title="Pelada">
+        <PageBase title="Administrador">
             <div className={classes.trow}>
                 <div className={classes.tcol}>
                     Página do Administrador
@@ -18,4 +18,4 @@ function Pelada() {
     )
 }
 
-export default Pelada
+export default Admin

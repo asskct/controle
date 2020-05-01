@@ -1,7 +1,7 @@
 import { push } from 'connected-react-router'
 
 export function signIn(credencials) {
-    return (dispatch, getState, getFirebase) => {
+    return (dispatch, getState, { getFirebase, getFirestore }) => {
         const firebase = getFirebase()
         firebase.auth()
         .signInWithEmailAndPassword(
@@ -19,7 +19,7 @@ export function signIn(credencials) {
 }
 
 export function signOut() {
-    return (dispatch, getState, getFirebase) => {        
+    return (dispatch, getState, { getFirebase, getFirestore }) => {        
         const firebase = getFirebase()
         firebase.auth().signOut().then(() => {
             dispatch({ type: 'LOGOUT_SUCCESS'})

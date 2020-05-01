@@ -9,10 +9,11 @@ import {
   Typography
 } from '@material-ui/core'
 
-const useStyles = makeStyles(theme => ({
-  root: {
+const mediCardStyles = makeStyles(theme => ({
+  card: {
     display: 'flex',
     flexDirection: 'column',
+    marginBottom: theme.spacing(0.5),
   },
   reset: {
     margin: theme.spacing(0),
@@ -25,10 +26,10 @@ const useStyles = makeStyles(theme => ({
 }))
 
 export default function MediaCard({ Item } ) {  
-  const classes = useStyles()
+  const classes = mediCardStyles()
 
   return (
-    <Card className={classes.root}>
+    <Card className={classes.card}>
       <CardMedia        
         image={Item.image}
         title={Item.title}

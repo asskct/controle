@@ -3,17 +3,21 @@ import { green } from '@material-ui/core/colors'
 
 export const useStyles = makeStyles(theme => ({
     root: {
+        margin: '0 auto',
+        width: '100vw',
         maxWidth: 800,
+        background: green[600],
     },
     trow: {
         display: 'flex',
         flexFlow: 'row wrap',
         flexDirection: 'row',
         justifyContent: 'center',
-        background: green[600],
+        
     },
     tcol: {
         flex: 1,
+        width: '100vw',
         minWidth: 345,
         padding: theme.spacing(0, 0.8),
     },
@@ -21,6 +25,6 @@ export const useStyles = makeStyles(theme => ({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
-        marginTop: theme.spacing(0.5),
+        marginBottom: theme.spacing(0.5),
     },
 }))

@@ -1,4 +1,6 @@
-const initialState = { submitError: null }
+const initialState = { 
+    submitError: null 
+}
   
 export function useForm(state=initialState, action) {
     switch (action.type) { 

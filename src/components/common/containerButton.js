@@ -3,13 +3,15 @@ import { Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import IconButton from '@material-ui/core/IconButton'
 
-const useStyles = makeStyles(theme => ({
-    root: {
+import { useStyles } from '../common/useStyles'
+
+const custStyles = makeStyles(theme => ({
+    containerButtom: {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        margin: theme.spacing(0.3),
+        margin: theme.spacing(0.4),
         padding: theme.spacing(0.6, 0, 0, 0),
     },
     button: {
@@ -20,10 +22,13 @@ const useStyles = makeStyles(theme => ({
 function prevDef(e) { return e.preventDefault() }
 
 function ContainerButton({ children, label, action = prevDef }) {
-    const classes = useStyles()
+    const classes = {
+        ...custStyles(),
+        ...useStyles(),
+    }
 
     return (
-        <div className={classes.root}>
+        <div className={classes.containerButtom}>
             <IconButton
                 onClick={action}
                 className={classes.button}
